@@ -1,0 +1,189 @@
+<!-- Created by comet -->
+
+
+<html>
+    <head></head>
+    <style>
+        body{
+            align-items: center;
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            background-image: linear-gradient(20deg,rgb(185, 169, 243),rgb(31, 136, 177),rgb(154, 224, 40),crimson);
+        background-repeat:no-repeat;
+        }
+        .box{
+            position: absolute;
+            width:300px;
+            height:85px;
+            padding:10px;
+            display:flex;
+            background:rgb(14, 183, 235);
+            text-align: center;
+        }
+        .slider{
+        -webkit-appearance: none; 
+        margin:auto 10px;
+          appearance: none;
+           width: 100%;
+            height: 5px;
+            background: #d3d3d3; 
+              outline: none;
+              
+        }
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    background: rgb(240, 7, 150);
+
+}
+.slider::-moz-range-thumb{
+-webkit-appearance: none;
+    appearance: none;
+     
+}
+.b1{
+   height:20px;
+   width:30px;
+   background: greenyellow; 
+   margin-top: 25px;
+   padding: 5px 2px;
+   font-weight: bold;
+  
+   
+}
+#marker{
+    position:relative;
+    top:-40px;
+    left:-100px;
+    right:0px;
+    height:20px;
+    width:30px;
+    z-index:100;
+}
+.fa{
+    font-size: 38px;
+    color: crimson;
+   
+}
+#para{
+    height:20px;
+    width:30px;
+   margin-left: -23px; 
+    position: absolute;
+    padding:5px 0px;
+    font-weight: bold;
+}
+#emoji{
+    position: relative;
+    top:30px;
+    right:18px;
+    height:30px;
+    width: 32px;
+    border-radius: 50%;
+  
+   font-size: 25px;
+   font-weight: bold;
+   text-align: center;
+   padding-bottom: 4px;
+   
+   
+ 
+}
+#yt{
+    height:60px;
+    width:100%;
+    background:crimson;
+    position:absolute;
+    bottom:0px;
+    text-align:center;
+    
+    line-height:50px;
+    
+    
+}
+a{
+    text-decoration:none;
+    color:white;
+    font-size:28px;
+    
+}
+#copy{
+    position:absolute;
+    bottom:60px;
+    color:white;
+    font-size:22px;
+    right:0px;
+    font-family:Courier;
+}
+
+
+
+        
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
+<body>
+    <div  id="marker"><i class="fa fa-map-marker"></i><span id="para">50</span></div>
+    <div class="box">
+        <span class="b1">1</span>
+        <input type="range" min="1" max="100" value="50" class="slider" id="slider11" oninput="prize()">
+        <span class="b1">100</span><br>
+
+        
+
+    </div>
+    <div id="emoji"></div>
+    <div id="yt"><a href="https://youtu.be/vfvtIysGJcs">
+    </a></div>
+
+    <script>
+        var msg=document.getElementById("para");
+        var SLI=document.getElementById("slider11");
+        var val=document.getElementById("slider11").value;
+        var MARKER=document.getElementById("marker");
+         MARKER.style.left=val*2.3-100+"px";
+       MARKER.style.opacity="0";
+
+function prize(){
+    var msg=document.getElementById("para");
+    var EMOJI=document.getElementById("emoji");
+    var val=document.getElementById("slider11").value;
+    var MARKER=document.getElementById("marker");
+    msg.innerText=val;
+    MARKER.style.left=val*2.1-90+"px";
+    MARKER.style.opacity="1";
+    
+        msg.style.fontSize="14px";
+    
+    if(val<=25)
+    {
+      EMOJI.innerHTML="☹️";
+    }
+     else if(val>25 && val<=40)
+    {
+        EMOJI.innerHTML="😐";
+    }
+    else if(val>40 && val<=60)
+    {
+        EMOJI.innerHTML="😂";
+    }
+    else if(val>60 && val<=75)
+    {
+        EMOJI.innerHTML="🙂";
+    }
+    else {
+        EMOJI.innerHTML="😍";
+    }
+   
+    
+    
+    
+    
+}
+    </script>
+</body>
+    </html>
